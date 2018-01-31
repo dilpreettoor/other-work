@@ -1,0 +1,157 @@
+//: Playground - noun: a place where people can play
+import UIKit
+
+//Day-2 Swift Programming Basics (String And Characters)
+
+//Declaring Multiple lines in string
+let strmulti = """
+Hello, playground
+This is the first line
+This is the second line
+This is the third line
+"""
+
+print(strmulti)
+
+
+
+//Checking weather string is empty or not
+// Declaring variables with unicodes
+var mood = ""
+
+let heart = "\u{1F474}"
+mood = "Happy"
+
+if mood.isEmpty {
+    print("Given string is empty")
+    
+}
+else
+{
+    print("Given string is :- ",mood)
+    print(heart)
+    print("\u{1F602}")
+    
+}
+
+
+
+// Joining of strings
+
+mood += " Cheerful Joyful"
+print("String after joing is :- ",mood)
+
+
+
+//Using String as Array and Single String
+
+var firstname = String()
+firstname = "Naveen"
+print (firstname)
+
+for i in firstname {
+    print(i)
+}
+
+// Appending character with string array
+
+let initial : Character = "p"
+firstname.append(initial)
+
+print(firstname)
+
+
+//count the number of chars in string with .count function
+
+print("FirstName is \(firstname) which is \(firstname.count) characters long")
+
+
+//inserting char with .insert function
+
+firstname.insert("D", at: firstname.endIndex)
+print(firstname)
+
+firstname.insert("N", at: firstname.startIndex)
+print(firstname)
+
+
+//Inserting string into string
+
+
+firstname.insert(contentsOf: "Dushila", at: firstname.endIndex)
+print(firstname)
+
+
+//Removing char from String
+
+firstname.remove(at: firstname.index(before: firstname.endIndex))
+print(firstname)
+firstname.remove(at: firstname.index(before: firstname.endIndex))
+firstname.remove(at: firstname.index(before: firstname.endIndex))
+print(firstname)
+
+
+//Abstracting Sub-Strings
+
+let greeting = "Hello, world!"
+let index = greeting.index(of: ",") ?? greeting.endIndex
+let beginning = greeting[..<index]
+// beginning is "Hello"
+
+print(greeting)
+// Convert the result to a String for long-term storage.
+let newString = String(beginning)
+print(newString)
+
+print(newString.uppercased())
+print(newString.lowercased())
+
+
+
+var grade:String?
+//grade = "A"
+let finalGrade = grade ?? "F"
+
+if (finalGrade.isEmpty)
+{
+    print("not Graded yet")
+}
+else
+{
+    print("Final grade:",finalGrade)
+}
+
+
+
+
+
+
+/*
+
+//print("",firstname[firstname.Index(firstname.startIndex,offsetby: 4)])
+
+print("frist char:",firstname[firstname.startIndex])
+print("Last Char:",firstname[firstname.index(before: firstname.endIndex)])
+print("3rd from last Char:",firstname[firstname.index(firstname.endIndex,offsetBy: -3)])
+print("2nd from start Char:",firstname[firstname.index(firstname.startIndex,offsetBy: 2)])
+
+
+//count the string, run the for loop and display 1st to last and then last to first
+var newname = String()
+newname = "NaveenDushila"
+var NoChar = 0
+
+NoChar = newname.count
+
+print("No. of Chars:-",NoChar)
+
+print("Chars from Starting")
+for NoChar in newname {
+    print(NoChar)
+}
+print("Chars from End")
+for NoChar in newname.reversed() {
+    print(NoChar)
+}
+
+*/
